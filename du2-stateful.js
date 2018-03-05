@@ -64,7 +64,6 @@ const server = net.createServer(function (socket) {
         let answer = processData(data, clientState, stateCallback);
         console.log('Answer to ' + clientId + ' with state ' + clientState.name + ': ' + answer);
         socket.write(answer);
-        //socket.end(); // close socket/connection
     });
 
     // simple callback to update client's state
