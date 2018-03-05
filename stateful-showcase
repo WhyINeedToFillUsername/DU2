@@ -1,0 +1,37 @@
+STATEFUL
+SERVER - CLIENT (">" means user input)
+
+Server running at http://127.0.0.1:3000/
+
+    >$ telnet localhost 3000
+     Trying 127.0.0.1...
+     Connected to localhost.
+     Escape character is '^]'.
+     Welcome to the STATEFUL order server!
+     Type 'open' to open the basket.
+
+socket opened: 127.0.0.1:53224
+
+
+
+    >open
+     opened. Next command is 'add'.
+
+Incoming data: 'open' from 127.0.0.1:53328 with state: open
+Answer to 127.0.0.1:53328 with state add: opened. Next command is 'add'.
+
+
+
+    >add
+     added. Next command is 'process'.
+
+Incoming data: 'add' from 127.0.0.1:53328 with state: add
+Answer to 127.0.0.1:53328 with state process: added. Next command is 'process'.
+
+
+
+    >process
+     processed. Start over using 'open'.
+
+Incoming data: 'process' from 127.0.0.1:53328 with state: process
+Answer to 127.0.0.1:53328 with state open: processed. Start over using 'open'.

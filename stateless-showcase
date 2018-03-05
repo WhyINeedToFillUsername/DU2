@@ -1,0 +1,40 @@
+STATELESS
+SERVER - CLIENT (">" means user input)
+
+Server running at http://127.0.0.1:3000/
+
+    >$ telnet localhost 3000
+     Trying 127.0.0.1...
+     Connected to localhost.
+     Escape character is '^]'.
+     Welcome to the STATELESS order server!
+     State and command is separated by ':'. Type 'initial:open' to open the basket.
+
+socket opened: 127.0.0.1:53224
+
+
+
+    >initial:open
+     New state: 'opened'. Next command is 'add'.
+
+Incoming data: 'initial:open' from 127.0.0.1:53224
+initial open initial
+Answer to 127.0.0.1:53224: New state: 'opened'. Next command is 'add'.
+
+
+
+    >opened:add
+     New state: 'added'. Next command is 'process'.
+
+Incoming data: 'opened:add' from 127.0.0.1:53224
+opened add opened
+Answer to 127.0.0.1:53224: New state: 'added'. Next command is 'process'.
+
+
+
+    >added:process
+     Finished. New state: 'initial'. Start over using 'open'.
+
+Incoming data: 'added:process' from 127.0.0.1:53224
+added process added
+Answer to 127.0.0.1:53224: Finished. New state: 'initial'. Start over using 'open'.
